@@ -10,19 +10,39 @@ import '../styles/blog-post.css';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": title,
+	"description": description,
+	"datePublished": pubDate.toISOString(),
+	...(updatedDate && { "dateModified": updatedDate.toISOString() }),
+	...(heroImage && { "image": new URL(heroImage.src, Astro.site).toString() }),
+	"author": {
+		"@type": "Person",
+		"name": "Tomáš Jelínek",
+		"url": "https://tomasjelinek.dev"
+	},
+	"publisher": {
+		"@type": "Person",
+		"name": "Tomáš Jelínek"
+	}
+};
 ---
 
 <html lang="cs">
 	<head>
 		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 	</head>
 
 	<body>
 		<Header />
-		<main>
+		<main id="main-content">
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt={`Ilustrační obrázek pro článek: ${title}`} />}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -31,7 +51,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										Aktualizováno <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
