@@ -1,0 +1,74 @@
+main {
+    width: calc(100% - 2em);
+    max-width: 100%;
+    margin: 0;
+}
+.hero-image {
+    width: 100%;
+}
+.hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+.prose {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    color: rgb(var(--gray-dark));
+}
+.title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+}
+.title h1 {
+    margin: 0 0 0.5em 0;
+}
+.date {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+}
+.last-updated-on {
+    font-style: italic;
+}
+.back-to-top {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgb(var(--gray-light));
+    text-align: center;
+}
+.back-to-top a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: rgb(var(--gray));
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.back-to-top a:hover {
+    color: var(--accent);
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+.tag {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    font-size: 0.875em;
+    color: var(--accent);
+    background-color: rgba(5, 80, 174, 0.1);
+    border-radius: 1em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.tag:hover {
+    background-color: var(--accent);
+    color: white;
+}
