@@ -127,6 +127,20 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+.intro {
+	margin: 2em 0;
+	padding: 1.5em;
+	background: rgba(var(--gray-light), 0.3);
+	border-radius: 12px;
+}
+.intro h2 {
+	margin-bottom: 0.5em;
+	font-size: 1.5em;
+}
+.intro p {
+	margin: 0;
+	color: rgb(var(--gray-dark));
+}
 @media (max-width: 767px) {
 	body {
 		font-size: 18px;

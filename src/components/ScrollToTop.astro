@@ -1,0 +1,80 @@
+---
+interface Props {
+	threshold?: number;
+}
+
+const { threshold = 300 } = Astro.props;
+---
+
+<button class="scroll-to-top" aria-label="Přejít nahoru" data-threshold={threshold}>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+		<polyline points="18 15 12 9 6 15"></polyline>
+	</svg>
+</button>
+
+<style>
+	.scroll-to-top {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		z-index: 999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background-color: var(--accent);
+		color: white;
+		cursor: pointer;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(20px);
+		transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+	.scroll-to-top.visible {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	.scroll-to-top:hover {
+		background-color: var(--accent-dark);
+	}
+	.scroll-to-top:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+	@media (max-width: 767px) {
+		.scroll-to-top {
+			bottom: 5rem;
+			right: 1rem;
+			width: 44px;
+			height: 44px;
+		}
+	}
+</style>
+
+<script>
+	const button = document.querySelector('.scroll-to-top') as HTMLButtonElement;
+	if (button) {
+		const threshold = parseInt(button.dataset.threshold || '300', 10);
+
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > threshold) {
+				button.classList.add('visible');
+			} else {
+				button.classList.remove('visible');
+			}
+		}, { passive: true });
+
+		button.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	}
+</script>
