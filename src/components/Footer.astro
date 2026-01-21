@@ -3,7 +3,9 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Tomáš Jelínek. Všechna práva vyhrazena.
+	<div class="contact">
+		<a href="mailto:info@tomasjelinek.dev">info@tomasjelinek.dev</a>
+	</div>
 	<div class="social-links">
 		<a href="https://github.com/thed3er" target="_blank" rel="noopener noreferrer">
 			<span class="sr-only">GitHub profil</span>
@@ -15,6 +17,9 @@ const today = new Date();
 			>
 		</a>
 	</div>
+	<div class="copyright">
+		&copy; {today.getFullYear()} Tomáš Jelínek. Všechna práva vyhrazena.
+	</div>
 </footer>
 <style>
 	footer {
@@ -23,11 +28,22 @@ const today = new Date();
 		color: rgb(var(--gray));
 		text-align: center;
 	}
+	.contact {
+		margin-bottom: 1em;
+	}
+	.contact a {
+		color: var(--accent);
+		text-decoration: none;
+		font-size: 1.1em;
+	}
+	.contact a:hover {
+		text-decoration: underline;
+	}
 	.social-links {
 		display: flex;
 		justify-content: center;
 		gap: 1em;
-		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 	.social-links a {
 		text-decoration: none;
@@ -35,5 +51,8 @@ const today = new Date();
 	}
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
+	}
+	.copyright {
+		font-size: 0.9em;
 	}
 </style>
