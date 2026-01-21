@@ -65,3 +65,53 @@ ul a:hover img {
         font-size: 1.563em;
     }
 }
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+.tag {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    font-size: 0.875em;
+    color: var(--accent);
+    background-color: rgba(5, 80, 174, 0.1);
+    border-radius: 1em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.tag:hover {
+    background-color: var(--accent);
+    color: white;
+}
+.tag.active {
+    background-color: var(--accent);
+    color: white;
+}
+.all-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+.tag-highlight {
+    color: var(--accent);
+}
+.tag-count {
+    color: rgb(var(--gray));
+    margin-bottom: 2em;
+}
+.back-link {
+    margin-top: 2em;
+    text-align: center;
+}
+.back-link a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.back-link a:hover {
+    text-decoration: underline;
+}
