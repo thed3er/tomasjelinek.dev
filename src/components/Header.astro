@@ -59,9 +59,79 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+
+	/* Mobil: header fixovaný na spodku */
+	@media (max-width: 767px) {
+		header {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			box-shadow: 0 -2px 8px rgba(var(--black), 10%);
+			transition: transform 0.3s ease-in-out;
+		}
+		header.hidden {
+			transform: translateY(100%);
+		}
+		h2 {
+			display: none;
+		}
+		nav {
+			justify-content: center;
+		}
+		.internal-links {
+			display: flex;
+			justify-content: center;
+			gap: 0.5em;
+		}
+		nav a {
+			border-bottom: none;
+			border-top: 4px solid transparent;
+		}
+		nav a.active {
+			border-top-color: var(--accent);
+		}
 		.social-links {
 			display: none;
 		}
 	}
+
+	/* Tablet a větší: header nahoře */
+	@media (min-width: 768px) {
+		header {
+			position: static;
+		}
+	}
 </style>
+
+<script>
+	const header = document.querySelector('header');
+	let lastScrollY = window.scrollY;
+	let scrollUpDistance = 0;
+	const scrollUpThreshold = 150;
+	const isMobile = () => window.innerWidth < 768;
+
+	window.addEventListener('scroll', () => {
+		if (!isMobile() || !header) return;
+
+		const currentScrollY = window.scrollY;
+		const scrollDelta = lastScrollY - currentScrollY;
+
+		if (scrollDelta < 0) {
+			// Scroll dolů
+			scrollUpDistance = 0;
+			if (currentScrollY > 200) {
+				header.classList.add('hidden');
+			}
+		} else {
+			// Scroll nahoru
+			scrollUpDistance += scrollDelta;
+			if (scrollUpDistance >= scrollUpThreshold || currentScrollY <= 80) {
+				header.classList.remove('hidden');
+			}
+		}
+
+		lastScrollY = currentScrollY;
+	}, { passive: true });
+</script>
