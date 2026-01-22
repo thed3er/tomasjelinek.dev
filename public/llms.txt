@@ -1,0 +1,69 @@
+# Tomáš Jelínek - Tvorba webových aplikací a stránek
+
+> Webový vývojář zaměřený na tvorbu moderních webových aplikací, firemních webů a portfolií pro jednotlivce a malé firmy v České republice.
+
+## O mně
+
+Jmenuji se Tomáš Jelínek a specializuji se na tvorbu webových stránek a aplikací. Mým cílem je pochopit potřeby zákazníka a vytvořit řešení, které mu ulehčí práci v digitálním světě. Mám zkušenosti s vývojem podle layoutu, tvorbou webových aplikací a užitečných nástrojů.
+
+## Služby
+
+### Tvorba webových stránek
+- **Firemní weby** - Moderní a profesionální prezentace vaší firmy
+- **Portfolia** - Osobní webové stránky pro prezentaci vaší práce a projektů
+- **Responzivní design** - Weby optimalizované pro všechna zařízení
+
+### Vývoj webových aplikací
+- Vlastní webové aplikace na míru
+- Interaktivní nástroje a řešení
+- Integrace s databázemi a API
+
+### Konzultace
+- Konzultace ohledně webových řešení
+- Technické poradenství
+- Pomoc s optimalizací existujících webů
+
+## Technologie
+
+### Frontend
+- React
+- Next.js
+- HTML5, CSS3
+- JavaScript (moderní ES6+)
+
+### Backend
+- PHP
+- Java
+
+### Databáze
+- MySQL
+- PostgreSQL
+
+## Pro koho jsou mé služby
+
+Mé služby jsou určeny především pro:
+- **Jednotlivce** - kteří potřebují profesionální online prezentaci
+- **Malé firmy** - které hledají kvalitní webové řešení
+- **Zákazníky v České republice** - s možností osobní schůzky a komunikace v češtině
+
+## Přístup k práci
+
+Kladu důraz na:
+- Porozumění potřebám zákazníka
+- Vytvoření řešení, které skutečně ulehčí práci
+- Moderní a čisté webové technologie
+- Funkčnost a uživatelskou přívětivost
+
+## Portfolio
+
+Moje realizované projekty a články najdete na: [tomasjelinek.dev/clanky](https://tomasjelinek.dev/clanky)
+
+## Kontakt
+
+- **Email:** info@tomasjelinek.dev
+- **Web:** tomasjelinek.dev
+- **Oblast působení:** Česká republika
+
+---
+
+*Hledáte pomoc s webovým projektem? Kontaktujte mě na výše uvedeném emailu a společně najdeme řešení pro vaše potřeby.*

@@ -3,12 +3,49 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const faqData = [
+	{
+		question: "Jak dlouho bude trvat vývoj mého firemního webu a jaký je proces od první schůzky po spuštění?",
+		answer: "Vývoj firemního webu s 5-7 stránkami typicky trvá 2-8 týdnů. Proces zahrnuje: úvodní konzultaci a sběr požadavků, návrh designu, vývoj a implementaci, testování a finální úpravy, a nasazení webu. Každou fázi s vámi průběžně konzultuji."
+	},
+	{
+		question: "Kolik přesně bude stát kompletní firemní web a co všechno je zahrnuto v ceně?",
+		answer: "Cena firemního webu závisí na rozsahu a složitosti. V ceně je zahrnuto: návrh a vývoj webu, responzivní design, základní SEO optimalizace. Hosting a doména jsou obvykle roční náklady cca 1000-2000 Kč/rok. Konkrétní cenovou nabídku připravím po úvodní konzultaci."
+	},
+	{
+		question: "Jak to je s podporou a možnými úpravami?",
+		answer: "Pokud se nacházíte v akutní situaci, tak mě kontaktujte přes telefon. Menší zásahy řeším obvykle do 48 hodin. Pro větší úpravy nabízím balíčky hodinové podpory nebo individuální dohody podle vašich potřeb."
+	},
+	{
+		question: "Jak zajistíte, že můj web najdou zákazníci na Googlu?",
+		answer: "Každý web optimalizuji pro vyhledávače (SEO): správná struktura, rychlé načítání, meta tagy a další technické aspekty. Připojím také Google Analytics, abyste viděli návštěvnost a zdroje příchozích návštěvníků."
+	},
+	{
+		question: "Jak mi dokážete ulehčit práci s webem a digitálními procesy?",
+		answer: "Vytvářím nástroje šité na míru vašim konkrétním potřebám. Automatizuji opakující se úkoly. Navrhuji intuitivní řešení pro opakující se práci. Výsledme musí být zlepšení kvality a úspora času."
+	}
+];
+
+const faqSchema = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqData.map(item => ({
+		"@type": "Question",
+		"name": item.question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": item.answer
+		}
+	}))
+}, null, "\t");
 ---
 
 <!doctype html>
 <html lang="cs">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json" set:html={faqSchema} />
 	</head>
 	<body>
 		<Header />
@@ -37,6 +74,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					Nebojím se výzev. Ať už potřebujete opravit legacy kód, navrhnout novou funkcionalitu 
 					nebo konzultovat technické řešení – rád pomohu.
 				</p>
+			</section>
+
+			<section class="faq">
+				<h2>Časté dotazy</h2>
+				<div class="faq-list">
+					{faqData.map((item) => (
+						<details class="faq-item">
+							<summary>{item.question}</summary>
+							<p>{item.answer}</p>
+						</details>
+					))}
+				</div>
 			</section>
 		</main>
 		<Footer />
