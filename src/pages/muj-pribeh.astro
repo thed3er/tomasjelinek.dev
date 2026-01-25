@@ -1,0 +1,46 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+import { SITE_ABOUT_ME } from '../consts'
+---
+
+<Layout
+	title="Můj příběh - více než jen kód | Tomáš Jelínek"
+	description={SITE_ABOUT_ME}
+	pubDate={new Date('January 25 2026')}
+	heroImage={AboutHeroImage}
+>
+
+	<p>
+		Ahoj! Jmenuji se Tomáš Jelínek a vždycky mě fascinovalo fungování počítačů. Nebyl počítač,
+		který bych nezkusil demontovat a zjistit jak funguje. Kolik má větráků. Jaká operační pamět je uvnitř.
+		Jaké diskety lze použít (to bylo ještě v době "dinosaurů"). Tato zvědavost mě nakonec přivedla ke studiu informačních technologií.
+	</p>
+
+	<p>
+		Během studií na škole jsem měl možnost vidět různé cesty v IT světě - od správy sítí, přes vývoj
+		(webové aplikace, robotizace, desky tištěných spojů), až po kybernetickou bezpečnost.
+		Nakonec jsem se rozhodl zaměřit na platformu webových prohlížečů a vývoj aplikací pro ně.
+		Pořád jsem názoru, že škola úkáže cesty, kterými se může student vydat, ale do "rabbit hole" (králičí nory)
+		musí člověk skočit sám a objevovat a zdokonalovat se.
+		Chtěl jsem se věnovat programování a vnímal jsem tři platformy na kterých se vyvíjí aplikace -
+		nativní desktopové aplikace, mobilní aplikace a webové aplikace (zařízení na kterých se dokáže spustit webový prohlížeč).
+	</p>
+
+	<p>
+		Webové aplikace dokážou být univerzální a dostupné na různých typech zařízení.
+		Tak začala moje cesta k rozšiřování znalostí ohledně vývoje webových aplikací.
+		Spring ekosystém se všemi projekty nabízí širokou paletu možností, jak stavět robustí a škálovatelné aplikace.
+		Zároveň dokáže vytvořit lightweight aplikace pomocí projektu Spring Boot.
+		Vytvořit Java web aplikaci není vždy nejlevnější řešení (zvláště pro menší projekty),
+		jelikož vyžaduje Apache Java server (Tomcat a Jetty), který je náročnější na provoz a údržbu.
+		Proto jsem se začal více zajímat o PHP (Symfony, Laravel), který je více dostupný a jednodušší na provoz.
+	</p>
+
+	<p>
+		Můj příběh stále pokračuje a teším se na další kapitoly a možnosti profesního rozvoje v IT světě.
+		Pokud zrovna nejsem za klávesnicí počítače úpřeně se dívající na monitory s kódem,
+		tak útíkám ke sportu, rodině a gauči.
+	</p>
+
+</Layout>

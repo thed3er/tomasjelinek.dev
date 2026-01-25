@@ -1,2 +1,3 @@
-export const SITE_TITLE = 'Tomáš Jelínek';
-export const SITE_DESCRIPTION = 'Osobní portfólio a blog kde se dozvíš více o webu a aplikacích';
+export const SITE_TITLE = 'Tomáš Jelínek | Webový vývojář - portfolio a blog';
+export const SITE_DESCRIPTION = 'Chceš webovou aplikaci, stránku nebo tě zajímá vývoj? Jmenuji se Tomáš Jelínek. Pomohu ti s projektem a v článcích ti ukážu svět kódu - PHP, Java a JavaScript.';
+export const SITE_ABOUT_ME = 'Přečtěte si můj příběh o cestě k webovému vývoji. Jaké technologie jsem se učil. Jak jsem začínal a jak jsem uvažoval proč zvolit webové aplikace.';
