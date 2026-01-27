@@ -1,0 +1,45 @@
+---
+title : 'Proč používat JSON-LD na webu a jak vznikl'
+description : 'Proč používat JSON-LD na webu a jak vznikl'
+pubDate : 'January 27 2026'
+heroImage : '../assets/blog-placeholder-5.jpg'
+tags : ['SEO', 'JSON-LD', 'Schema.org']
+---
+
+JSON‑LD (JavaScript Object Notation for Linked Data) je doporučovaný způsob strukturovaní dat na webu,
+který pomáhá například Google Search a Seznam Bot zjistit informace, které může použít pro zobrazení ve výsledcích vyhledávání.
+
+Mění se něco z pohledu čtenářů webu? Ne. JSON‑LD je skrytý v kódu stránky a není viditelný pro uživatele.
+Je určen pro vyhledávače a další nástroje, které čtou obsah webu. Důležité je, aby JSON-LD byl uveden v HTML stránce ihned po načtení stránky.
+V případě dynamicky generovaného obsahu (například pomocí JavaScriptu) je možné že crawleři nebudou mít přístup k těmto datům.
+
+Zde je příklad JSON-LD:
+```javascript
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://tomasjelinek.dev/#person",
+      "name": "Tomáš Jelínek",
+      "url": "https://tomasjelinek.dev/",
+      "description": "Web developer"
+    },
+  ]
+}
+</script>
+```
+
+Tento kód se většinou umisťuje do hlavičky HTML dokumentu (mezi `<head>` a `</head>`). Pomocí JSON‑LD můžete například definovat informace o autorovi stránky, článku, recenzi produktu atd.
+
+Návrh na tento formát vznikl v roce 2012 a v roce 2014 vešel v platnost jako standard W3C (<a href="https://www.w3.org/standards/history/json-ld/" rel="nofollow noreferrer noopener" target="_blank">JSON-LD 1.0 publication history</a>).
+Tento formát dostal další verzi JSON-LD 1.1 v roce 2017 (<a href="https://www.w3.org/TR/json-ld11/" rel="nofollow noreferrer noopener" target="_blank">JSON-LD 1.1</a>).
+
+Jsou alternativy k JSON‑LD? Ano, například Microdata (<a href="https://schema.org/docs/gs.html" rel="nofollow noreferrer noopener" target="_blank">Schema.org - Microdata</a>) nebo RDFa. Opět čtenář nepozná rozdíl, ale crawleři (roboti vyhledávačů) ano.
+Kdo další pozná rozdíl jsou vývojáři webů (programátoři a kodéři), kteří musí tyto formáty implementovat nebo číst mezi nimi.
+JSON-LD formát je umístěn mimo samotný HTML obsah stránky, takže pro úpravu zobrazení stránky může být pro vývojáře jednodušší způsob číst.
+
+
+- <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" rel="nofollow noreferrer noopener" target="_blank">Introduction to structured data markup in Google Search</a>
+- <a href="https://www.searchenginejournal.com/ranking-keyword-domains/263693/" rel="nofollow noreferrer noopener" target="_blank">Google’s Preferred Structured Data: JSON-LD vs. Microdata</a>
