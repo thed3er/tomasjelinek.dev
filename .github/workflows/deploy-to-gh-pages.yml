@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
+      - name: Create root file from secret name
+        run: echo "${{ secrets.INDEXNOW_KEY }}" > "public/${{ secrets.INDEXNOW_KEY }}.txt"
       - name: Install, build, and upload your site
         uses: withastro/action@v5
           # with:
